@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Layout Page com Bootstrap</title>
+
+        <link rel="stylesheet" href="css/estilo.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    </head>
+
+    <body data-spy="scroll" data-target="nav-menu" data-offset="150"> <!--para selecionar o menu quando estiver na seção correspondente-->
+        <header>
+
+            <div id="banner">
+                <h1>DEVCON</h1>
+                <h2>Exemplo - Bootstrap</h2>
+            </div>
+
+                <nav class="navbar navbar-inverse" id="navbar">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#banner">DEVCON</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="nav-menu">
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#agenda">Agenda</a></li>
+                    <li><a href="#palestrantes">Palestrantes</a></li>
+                    <li><a href="#local">Como chegar</a></li>
+                    <li><a href="" data-toggle="modal" data-target="#modal-contato">Contato</a></li> <!--adicionando o atributo data-toggle com o valor modal e definindo que ao ser clicado o mesmo será aberto, e o atributo data-target indica qual modal será aberto.-->
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+<section id="sobre">
+    <div class="container">
+        <div class="row text-center">  
+            <h3 class="title">SOBRE</h3>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+
+                <!--A base do carosel do bootstrap e para fazer a transição dos itens mais suave-->
+
+                <div id="carousel-sobre" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="img/curso_00.png" alt=".net">
+                        </div>
+
+                        <div class="item">
+                            <img src="img/curso_01.png" alt="java jsf">
+                        </div>
+
+                        <div class="item">
+                            <img src="img/curso_02.png" alt="css3">
+                        </div>
+                    </div>
+
+                    <!--Para os itens ir para frente e para atrais-->
+
+                <a class="left carousel-control" href="#carousel-sobre" data-slide="prev">
+                    <span class="icon-prev"></span>
+                </a>
+
+                <a class="right carousel-control" href="#carousel-sobre" data-slide="next">
+                    <span class="icon-next"></span>
+                </a>
+            </div>
+        </div>
+            <div class="col-sm-6 content">
+                <h4>
+                    Venha conhecer o principal evento de TI de Pernambuco, o DEVCON.
+                </h4>
+
+                <p>
+                Mais de 15 anos de treinamento online.
+                
+                <br>
+                Com cursos focados na funcionalidade do código. Na DevMedia você aprende com quem programa de verdade.
+
+                <br>
+                Agora você poderá aprender com os melhores profissionais do mercado ao vivo.
+            </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="agenda">
+    <div class="container">
+        <div class="row text-center">
+            <h3 class="title">AGENDA</h3>
+        </div>
+        <div class="row">
+            <div class="col-sm-12"> <!--para definir uma coluna que ocupa o espaço de 12/12 colunas do sistema de gri do Bootstarp-->
+
+            <!--Para criar as abas de cada tema. o data-toggle que indicaram 
+                a ação q ira fazer ao ser clicado-->
+
+
+                <ul class="nav nav-tabs"> 
+                    <li class="active"><a href="#net" data-toggle="tab">.Net</a> </li>
+                    <li><a href="#java" data-toggle="tab">Java</a></li>
+                    <li><a href="#php" data-toggle="tab">PHP</a></li>
+                    <li><a href="delphi" data-toggle="tab">Delphi</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="net">
+                <div class="list-group">
+                    <span class="list-group-item active">
+                        <h4 class="list-group-item-heading">10/12/2021</h4>
+                        <p class="list-group-item-text">O que é Entity Framework com Jebediah of Canaan (Shazam)</p>
+
+                    </span>
+                    <span class="list-group-item">
+                        <h4 class="list-group-item-heading">13/12/2021</h4>
+                        <p class="list-group-item-text">Novidade do C# com Elvira (Elvira: A Rainha das Trevas)</p>
+                    </span>
+
+                    <span class="list-group-item">
+                        <h4 class="list-group-item-heading">15/12/2021</h4>
+                        <p class="list-group-item-text">Porque utilizar o Xamarin com Imperatriz (A História Sem Fim)</p>
+                    </span>
+                </div>
+            </div>
+            <div class="tab-pane" id="java">
+                <div class="list-group">
+                    <span class="list-group-item">
+                        <h4 class="list-group-item-heading">17/12/2021</h4>
+                        <p class="list-group-item-text">Rotas no Java com Balthazar Blake (O Aprendiz de Feiticeiro)</p>
+                    </span>
+                    <span class="list-group-item">
+                        <h4 class="list-group-item-heading">19/12/2021</h4>
+                        <p class="list-group-item-text">Tudo sobre JSF com Chloe (O Último Caçador de Bruxas)</p>
+                    </span>
+                    <span class="list-group-item">
+                        <h4 class="list-group-item-heading">21/12/2021</h4>
+                        <p class="list-group-item-text">Hibernate com srta. Peregrine (O Lar das Crianças Peculiares)</p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="php">
+                <div class="list-group">
+                    <span class="list-group-item">
+                        <h4 class="list-group-item-heading">23/12/2021</h4>
+                        <p class="list-group-item-text">Melhores práticas com Albus Dumbledore (Harry Potter)</p>
+                    </span>
+                    <span class="list-group-item">
+                        <h4 class="list-group-item-heading">26/12/2021</h4>
+                        <p class="list-group-item-text">Refletions com John Constantine (Constantine)</p>
+                    </span>
+                    <span class="list-group-item">
+                        <h4 class="list-group-item-heading">28/12/2021</h4>
+                        <p class="list-group-item-text">PDO com Melisandre (Game of Thrones)</p>
+                    </span>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="delphi">
+                             <div class="list-group">
+                                        <span class="list-group-item">
+                                         <h4 class="list-group-item-heading">30/12/2021</h4>
+                                     <p class="list-group-item-text">Tecnica Avançadas com Gerald de Rívia (The Witcher)</p>
+                                        </span>
+                                         <span class="list-group-item">
+                                        <h4 class="list-group-item-heading">02/01/2022</h4>
+                                     <p class="list-group-item-text">Desenvolvimento para dispositívos móveis com Shamira (A Batalha do Apocalipse)</p>
+                                        </span>
+                                        <span class="list-group-item">
+                                    <h4 class="list-group-item-heading">04/01/2022</h4>
+                                        <p class="list-group-item-text">Vantagens do Delphin com Gandalf, o Cinzento (O Hobbit) </p>
+                            </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="palestrantes">
+    <div class="container">
+        <div class="row text-center">
+            <h3 class="title">CONHEÇA OS PALESTRANTES</h3>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-3"> <!--utilizando a classe col-md-3, definimos uma coluna que ocupa o espaço de 3/12 colunas do sistema de grid do Bootstrap, enquanto a largura da tela for maior ou igual a 992px, Com a classe col-sm-6 modifica-se a coluna para ocupar o espaço de 6/12 colunas da grid quando a largura da tela for maior ou igal a 768px-->
+                <div class="thumbnail"> 
+                    <img src="./img/palestrante_03.jpg" alt="Mago Shazam">
+                    <div class="caption">
+                        <h3>Shazam - C#</h3>
+                        <p>Mediador dos Poderes do Capitão Marvel</p>
+                    </div>
+                </div>
+            </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <img src="./img/palestrante_01.jpg" alt="Albus Dumbledore">
+                <div class="caption">
+                    <h3>Albus - PHP</h3>
+                    <p>O diretor da escola de bruxos Hogwarts.</p>
+                </div>
+            </div>
+        </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <img src="./img/palestrante_02.jpg" alt="Doutor Estranho">
+            <div class="caption">
+                <h3>Stephen - PHP</h3>
+                <p>Doutor Estranho serve como o Mago Supremo, o principal protetor da Terra contra ameaças mágicas e místicas</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+            <img src="./img/palestrante_00.jpg" alt="Gandalf, o Cinzento">
+            <div class="caption">
+                <h3>Gandalf - C#</h3>
+                <p>Gandalf é um Mago Istari, pertencente à raça dos Maiar, espírito angelical do mundo tolkienano</p>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</section>
+
+<section id="local">
+    <div class="container-fluid">
+        <div class="row text-center">
+            <h3 class="title">COMO CHEGAR</h3>
+        </div>
+
+        <div class="row iframe-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11171.684386021905!2d-34.89510357835082!3d-8.123167278294433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1fb714ac48d7%3A0xe16f6cb9ede83ea!2sAv.%20Boa%20Viagem%20-%20Boa%20Viagem%2C%20Recife%20-%20PE!5e0!3m2!1spt-BR!2sbr!4v1635805136447!5m2!1spt-BR!2sbr" 
+            frameborder="0" height="400" width="100%" style="border:0" allowfullscreen></iframe>
+
+        </div>
+    </div>
+</section>
+
+<section id="assine">
+    <div class="container">
+        <div class="row text-center">
+            <h3 class="title">FIQUE POR DENTRO</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6"> <!--Dividindo o espaço em duas colunas na primeira usando o col-sm-6 fazendo com que essa coluna ocupe o espaço de 6/12 colunas do sistema de grid do Boots-->
+                <h4>Esteja sempre atualizado sobre os ultimos eventos!</h4>
+            </div>
+
+            <div class="col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1"> <!-- criamos a segunda coluna utilizando a classe col-sm-6, e a classe col-xs-10 modifica a quantidade de colunas da grid que esse elemento irá ocupar para 10 em conjunto com a classe col-xs-offset-1, que define uma margem esquerda com o tamanho de uma coluna do sistema de grid enquanto a largura da tela for menor que 768px. E por último, a classe col-sm-offset-0 retorna a margem ao tamanho padrão quando o tamanho da largura da tela for maior ou igual a 768px.-->
+                <form method="POST" action="http=//arquivo.com/requisicao.php" target="_blank">
+                    <div class="input-group">
+                        <input type="email" class="form-control" name="email" placeholder="Digite o seu email" required>
+                            <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">Enviar!</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="https://www.youtube.com/c/DevmediaBrasil" target="_blank" class="icon-social youtube" data-toggle="tooltip" data-placement="top" title="Assista"></a> <!--adicionamos três links sociais, cada um com a classe icon-social que utilizaremos para definir uma aparência padrão e uma classe relativa à rede social: YouTube, Twitter e Facebook. Além disso temos o atributo data-toggle com o valor tooltip e o data-placement indicando a posição em que o tooltip irá parecer: top, right, bottom, left. Por último temos o atributo title onde definimos a mensagem de cada tooltip; (Nesse caso 'TOP' ira aparecer em cima)-->
+
+                <a href="https://twitter.com/Beluhga" target="_blank" class="icon-social twitter" data-toggle="tooltip" data-placement="top" title="Comente"></a>
+
+                <a href="https://www.facebook.com/michael.albuquerque.969" target="_blank" class="icon-social facebook" data-toggle="tooltip" data-placement="top" title="Compartilhe"></a>
+            </div>
+            <p class="text-center">
+                © 2021 - Programador Front-End Michael
+            </p>
+
+            <div class="modal fade" id="modal-contato" tabindex="-1"> <!--definindo o modal utilizando uma <div> com a classe modal, e a classe fade inicializa o modal fechado, além de definirmos um id para podermos identificá-lo;-->
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header"> <!--definindo o cabeçalho do modal com a classe modal-header;-->
+                            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button> <!--adiciona um botão para fechar o modal, definindo a aparência com a classe close e definindo a ação ocorrida quando clicado, com o atributo data-dismiss;-->
+                            <h4 class=modal-title>Deixe seu contato</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form method="POST" action="http://arquivo.com.br/requisicao.php" target="_blank"> <!--adiciona um formulário com o método POST como target _blank, abrindo o resultado da requisição em outra janela ou aba;-->
+                            <div class="form-group">
+                                <label for="nome" class="control-label">Nome</label>
+                                <input type="text" class="form-control" name="nome" placeholder="Digite o seu nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="control-label">Email</label>
+                                <input type="email" class="form-control" name="email" placeholder="Digite o seu email" required>
+                            </div>
+                            <div clas="form-group">
+                                <label for="mensagem" class="control-label">Mensagem</label>
+                            <textarea class="form-control" name="mensagem" placeholder="Digite a sua mensagem" rows="6" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Enviar</button> <!--adicionando um botão para submeter o formulário de contato-->
+                            </div>
+
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+    </body>
+</html>
